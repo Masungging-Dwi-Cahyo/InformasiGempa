@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.masungging.infogempa.views.OverViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minWidth="1980dp"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
+
+        <ImageView
+            android:id="@+id/iv_shakemapdetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:minWidth="242dp"
+            android:minHeight="300dp"
+            android:scaleType="fitXY"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            app:layout_constraintBottom_toTopOf="@+id/garis"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/logo" />
+
+        <View
+            android:id="@+id/garis"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/dividerHorizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="316dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tv_wilayahdetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{viewModel.detail.wilayah}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/garis"
+            tools:text="textview" />
+
+        <TextView
+            android:id="@+id/tv_lintangbujurdetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{viewModel.detail.lintang}"
+            app:layout_constraintStart_toStartOf="@+id/tv_wilayahdetail"
+            app:layout_constraintTop_toBottomOf="@+id/tv_wilayahdetail"
+            tools:text="textview" />
+
+        <TextView
+            android:id="@+id/tv_tanggaldetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{viewModel.detail.tanggal}"
+            app:layout_constraintStart_toStartOf="@+id/tv_lintangbujurdetail"
+            app:layout_constraintTop_toBottomOf="@+id/tv_lintangbujurdetail"
+            tools:text="textview" />
+
+        <TextView
+            android:id="@+id/tv_jamdetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{viewModel.detail.jam}"
+            app:layout_constraintStart_toStartOf="@+id/tv_tanggaldetail"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tanggaldetail"
+            tools:text="textview" />
+
+        <TextView
+            android:id="@+id/tv_magnitudedetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{viewModel.detail.magnitude}"
+            app:layout_constraintStart_toStartOf="@+id/tv_jamdetail"
+            app:layout_constraintTop_toBottomOf="@+id/tv_jamdetail"
+            tools:text="textview" />
+
+        <TextView
+            android:id="@+id/tv_kedalamandetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{viewModel.detail.kedalaman}"
+            app:layout_constraintStart_toStartOf="@+id/tv_magnitudedetail"
+            app:layout_constraintTop_toBottomOf="@+id/tv_magnitudedetail"
+            tools:text="textview" />
+
+        <TextView
+            android:id="@+id/tv_potensidetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{viewModel.detail.potensi}"
+            app:layout_constraintStart_toStartOf="@+id/tv_kedalamandetail"
+            app:layout_constraintTop_toBottomOf="@+id/tv_kedalamandetail"
+            tools:text="textview"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

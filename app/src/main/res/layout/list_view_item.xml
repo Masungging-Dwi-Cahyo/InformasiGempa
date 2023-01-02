@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.masungging.infogempa.model.ItemGempa" />
+        <variable
+            name="clickListener"
+            type="com.masungging.infogempa.adapter.GempaListener" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:onClick="@{() -> clickListener.onClick(data)}"
+        app:cardBackgroundColor="@android:color/holo_blue_light"
+        app:cardCornerRadius="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/tv_wilayahItem"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:textStyle="bold"
+                android:text="@{data.wilayah}"
+                app:layout_constraintEnd_toStartOf="@+id/tv_magnitudeItem"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="TextView"/>
+
+            <TextView
+                android:id="@+id/tv_deskripsiItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@{data.tanggal}"
+                app:layout_constraintStart_toStartOf="@+id/tv_wilayahItem"
+                app:layout_constraintTop_toBottomOf="@+id/tv_wilayahItem"
+                tools:text="TextView" />
+
+            <TextView
+                android:id="@+id/tv_potensigempaItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="@{data.potensi}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_deskripsiItem"
+                app:layout_constraintTop_toBottomOf="@+id/tv_deskripsiItem"
+                tools:text="TextView" />
+
+            <TextView
+                android:id="@+id/tv_magnitudeItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{data.magnitude}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="TextView" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Magnitude"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_magnitudeItem"
+                app:layout_constraintEnd_toEndOf="@+id/tv_magnitudeItem"
+                app:layout_constraintStart_toStartOf="@+id/tv_magnitudeItem" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

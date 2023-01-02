@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/gempaListFragment">
+
+    <fragment
+        android:id="@+id/gempaListFragment"
+        android:name="com.masungging.infogempa.views.GempaListFragment"
+        android:label="Info Gempa Terkini" >
+        <action
+            android:id="@+id/action_gempaListFragment_to_gempaDetailFragment"
+            app:destination="@id/gempaDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gempaDetailFragment"
+        android:name="com.masungging.infogempa.views.GempaDetailFragment"
+        android:label="Detail Gempa Terkini"
+        tools:layout="@layout/fragment_gempa_detail" />
+</navigation>
